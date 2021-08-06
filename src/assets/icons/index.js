@@ -1,6 +1,15 @@
-import IconHistory from './History.png';
-import IconHome from './Home.png';
-import IconSearch from './Search.png';
-import IconCollection from './Collection.png';
+import IconHome from './spotifyHome.png';
+import iconHomeActive from './spotifyHomeActive.png';
+import iconSearch from './spotifySearch.png';
+import iconSearchActive from './spotifySearchActive.png';
+import iconLibrary from './spotifyLibrary.png';
+import iconLibraryActive from './spotifyLibraryActive.png';
 
-export {IconHistory, IconHome, IconSearch, IconCollection};
+export {
+  IconHome,
+  iconHomeActive,
+  iconSearch,
+  iconSearchActive,
+  iconLibrary,
+  iconLibraryActive,
+};

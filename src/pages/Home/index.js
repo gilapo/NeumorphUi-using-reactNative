@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import {StyleSheet, Text, View, ScrollView} from 'react-native';
-import {FrequentlyPlayed, TopPodcast} from '../../components';
+import {FrequentlyPlayed, TopPodcast, Artist} from '../../components';
 
 class Home extends Component {
   constructor(props) {
@@ -58,11 +58,19 @@ class Home extends Component {
           </View>
           <Text style={styles.dividerText}>Acara Teratas Kamu</Text>
           <ScrollView horizontal style={styles.topPodcast}>
+            <TopPodcast
+              title="Where the Light is: John Mayer ..."
+              onPress={() => this.clickHandler('7')}
+              active={this.state.frequentlyPlayed === '7'}
+            />
             <TopPodcast />
             <TopPodcast />
             <TopPodcast />
             <TopPodcast />
-            <TopPodcast />
+          </ScrollView>
+          <Text style={styles.dividerText}>Baru diputar</Text>
+          <ScrollView horizontal style={styles.topPodcast}>
+            <Artist />
           </ScrollView>
         </View>
       </ScrollView>

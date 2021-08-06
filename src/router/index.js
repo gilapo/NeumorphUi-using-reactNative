@@ -1,8 +1,7 @@
 import React from 'react';
-import {StyleSheet, Text, View} from 'react-native';
 import {createStackNavigator} from '@react-navigation/stack';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
-import {Home, Search, Collection} from '../pages';
+import {Search, Collection, NewHome, NowPlaying} from '../pages';
 import {BottomTabNavigator} from '../components';
 
 const Stack = createStackNavigator();
@@ -10,9 +9,10 @@ const Tab = createBottomTabNavigator();
 
 const MainApp = () => {
   //button tab navigation
+
   return (
     <Tab.Navigator tabBar={props => <BottomTabNavigator {...props} />}>
-      <Tab.Screen name="Home" component={Home} />
+      <Tab.Screen name="Home" component={NewHome} />
       <Tab.Screen name="Search" component={Search} />
       <Tab.Screen name="Collection" component={Collection} />
     </Tab.Navigator>
@@ -28,10 +28,9 @@ const Router = () => {
         component={MainApp}
         options={{headerShown: false}}
       />
+      <Stack.Screen name="NowPlaying" component={NowPlaying} />
     </Stack.Navigator>
   );
 };
 
 export default Router;
-
-const styles = StyleSheet.create({});

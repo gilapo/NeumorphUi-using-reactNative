@@ -1,19 +1,21 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {StyleSheet, Pressable, Image, Text, View} from 'react-native';
 import {Neomorph} from 'react-native-neomorph-shadows';
-import {defaultImage} from '../../assets/Images';
 
-const FrequentlyPlayed = ({active, title, onPress}) => {
-  console.log(active);
+const FrequentlyPlayed = ({title, image}) => {
+  const [innerValue, setinnerValue] = useState(false);
   return (
-    <Pressable style={styles.container} onPress={onPress} active={active}>
+    <Pressable
+      style={styles.container}
+      onPressIn={() => setinnerValue(true)}
+      onPressOut={() => setinnerValue(false)}>
       <Neomorph
-        inner={active ? true : false}
-        swapShadows={active ? true : false}
+        inner={innerValue}
+        swapShadows={innerValue}
         darkShadowColor="#000000" // <- set this
         lightShadowColor="#3d3d3d" // <- this
         style={styles.neuButton}>
-        <Image source={defaultImage} style={styles.cover} />
+        <Image source={image} style={styles.cover} />
         <View style={styles.viewText}>
           <Text style={styles.buttonText}>{title}</Text>
         </View>
