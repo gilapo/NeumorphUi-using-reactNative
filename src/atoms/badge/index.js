@@ -1,8 +1,10 @@
 import React, {useState} from 'react';
-import {StyleSheet, Pressable, Image} from 'react-native';
+import {StyleSheet, Pressable, Text} from 'react-native';
 import {Neomorph} from 'react-native-neomorph-shadows';
-const RoundedButton = ({icon, onPress}) => {
+
+const Badges = ({text, length, onPress}) => {
   const [inner, setInner] = useState(false);
+
   return (
     <Pressable
       onPressIn={() => setInner(true)}
@@ -14,40 +16,39 @@ const RoundedButton = ({icon, onPress}) => {
         swapShadows={inner}
         darkShadowColor="#000000"
         lightShadowColor="#353C45"
-        style={styles.neuButton}>
-        <Image source={icon} style={styles.iconBtn} />
+        style={styles.neuButton(length)}>
+        <Text style={styles.btntext}>{text}</Text>
       </Neomorph>
     </Pressable>
   );
 };
 
-export default RoundedButton;
+export default Badges;
 
 const styles = StyleSheet.create({
   container: {
     alignContent: 'center',
     alignItems: 'center',
+    marginHorizontal: 6,
   },
-  neuButton: {
-    borderColor: 'rgba(34, 37, 41, 0.7)',
-    borderWidth: 1,
-    shadowOpacity: 0.5, // <- and this or yours opacity
-    shadowRadius: 5,
-    borderRadius: 25,
-    backgroundColor: '#272a2e',
-    width: 45,
-    height: 45,
-    padding: 15,
+  neuButton: width => {
+    return {
+      borderColor: '#ffffff',
+      borderWidth: 0.3,
+      shadowOpacity: 0.5, // <- and this or yours opacity
+      shadowRadius: 5,
+      borderRadius: 25,
+      backgroundColor: '#272a2e',
+      width: width,
+      height: 30,
+      padding: 3,
+      justifyContent: 'center',
+      alignItems: 'center',
+    };
   },
   btntext: {
-    color: '#919191',
-    marginTop: 3,
+    color: '#ffffff',
     fontSize: 12,
-  },
-  btntextFocus: {
-    fontSize: 12,
-    marginTop: 3,
-    color: 'white',
   },
   iconBtn: {
     width: '100%',

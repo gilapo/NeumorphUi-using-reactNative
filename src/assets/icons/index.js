@@ -4,7 +4,16 @@ import iconSearch from './spotifySearch.png';
 import iconSearchActive from './spotifySearchActive.png';
 import iconLibrary from './spotifyLibrary.png';
 import iconLibraryActive from './spotifyLibraryActive.png';
-
+import iconPlay from './play.png';
+import iconPlayActive from './playActiveWhite.png';
+import iconPlayActiveGreen from './playActiveGreen.png';
+import iconPause from './pause.png';
+import iconPauseActive from './pauseActiveGreen.png';
+import iconLike from './like.png';
+import iconLikeActive from './likeActive.png';
+import iconSearchBlack from './searchBlack.png';
+import iconBack from './back.png';
+import iconAdd from './add.png';
 export {
   IconHome,
   iconHomeActive,
@@ -12,4 +21,14 @@ export {
   iconSearchActive,
   iconLibrary,
   iconLibraryActive,
+  iconPlay,
+  iconPlayActive,
+  iconPlayActiveGreen,
+  iconPause,
+  iconPauseActive,
+  iconLike,
+  iconLikeActive,
+  iconSearchBlack,
+  iconBack,
+  iconAdd,
 };

@@ -27,10 +27,6 @@ const FrequentlyPlayed = ({title, image}) => {
 export default FrequentlyPlayed;
 
 const styles = StyleSheet.create({
-  container: {
-    alignContent: 'center',
-    alignItems: 'center',
-  },
   neuButton: {
     flexDirection: 'row',
     shadowOpacity: 0.5, // <- and this or yours opacity
@@ -39,7 +35,7 @@ const styles = StyleSheet.create({
     borderStyle: 'solid',
     borderColor: '#2b2b2b',
     borderRadius: 8,
-    backgroundColor: '#2b2b2b',
+    backgroundColor: '#272a2e',
     width: 180,
     height: 60,
     marginBottom: 10,
@@ -51,12 +47,14 @@ const styles = StyleSheet.create({
     borderTopLeftRadius: 8,
   },
   viewText: {
+    display: 'flex',
+    justifyContent: 'center',
     width: '70%',
-    height: 60,
+    height: '100%',
     paddingHorizontal: 7,
-    paddingVertical: 5,
   },
   buttonText: {
     color: 'white',
+    fontSize: 12,
   },
 });

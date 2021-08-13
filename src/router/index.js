@@ -1,7 +1,7 @@
 import React from 'react';
 import {createStackNavigator} from '@react-navigation/stack';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
-import {Search, Collection, NewHome, NowPlaying} from '../pages';
+import {Discover, Collection, NewHome, NowPlaying, Search} from '../pages';
 import {BottomTabNavigator} from '../components';
 
 const Stack = createStackNavigator();
@@ -13,7 +13,7 @@ const MainApp = () => {
   return (
     <Tab.Navigator tabBar={props => <BottomTabNavigator {...props} />}>
       <Tab.Screen name="Home" component={NewHome} />
-      <Tab.Screen name="Search" component={Search} />
+      <Tab.Screen name="Discover" component={Discover} />
       <Tab.Screen name="Collection" component={Collection} />
     </Tab.Navigator>
   );
@@ -29,6 +29,11 @@ const Router = () => {
         options={{headerShown: false}}
       />
       <Stack.Screen name="NowPlaying" component={NowPlaying} />
+      <Stack.Screen
+        name="Search"
+        component={Search}
+        options={{headerShown: false}}
+      />
     </Stack.Navigator>
   );
 };

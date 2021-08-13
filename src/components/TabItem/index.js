@@ -14,7 +14,7 @@ const TabItem = ({isFocused, label, onLongPress, onPress}) => {
     if (label === 'Home') {
       return IconHome;
     }
-    if (label === 'Search') {
+    if (label === 'Discover') {
       return iconSearch;
     }
     if (label === 'Collection') {
@@ -25,7 +25,7 @@ const TabItem = ({isFocused, label, onLongPress, onPress}) => {
     if (label === 'Home') {
       return iconHomeActive;
     }
-    if (label === 'Search') {
+    if (label === 'Discover') {
       return iconSearchActive;
     }
     if (label === 'Collection') {

@@ -29,18 +29,18 @@ export default Artist;
 const styles = StyleSheet.create({
   container: {
     marginVertical: 10,
-    paddingLeft: 5,
+    paddingLeft: 10,
     alignContent: 'center',
     alignItems: 'center',
   },
   neuButton: {
     shadowOpacity: 0.8, // <- and this or yours opacity
-    shadowRadius: 5,
+    shadowRadius: 3,
     borderWidth: 2,
     borderStyle: 'solid',
     borderColor: '#2b2b2b',
     borderRadius: 100,
-    backgroundColor: '#2b2b2b',
+    backgroundColor: '#272a2e',
     width: 150,
     height: 150,
     marginRight: 10,

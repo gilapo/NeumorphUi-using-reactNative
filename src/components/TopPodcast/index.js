@@ -30,17 +30,18 @@ export default TopPodcast;
 const styles = StyleSheet.create({
   container: {
     marginVertical: 10,
+    paddingLeft: 10,
     alignContent: 'center',
     alignItems: 'center',
   },
   neuButton: {
     shadowOpacity: 0.5, // <- and this or yours opacity
-    shadowRadius: 5,
+    shadowRadius: 3,
     borderWidth: 2,
     borderStyle: 'solid',
     borderColor: '#2b2b2b',
     borderRadius: 8,
-    backgroundColor: '#2b2b2b',
+    backgroundColor: '#272a2e',
     width: 150,
     height: 200,
     marginRight: 10,
@@ -54,10 +55,12 @@ const styles = StyleSheet.create({
     padding: 5,
   },
   titleText: {
+    fontSize: 12,
     fontWeight: 'bold',
     color: '#ffffff',
   },
   artistText: {
     color: '#ffffff',
+    fontSize: 10,
   },
 });

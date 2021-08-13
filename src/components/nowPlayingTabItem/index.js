@@ -1,15 +1,16 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {StyleSheet, View, Image, Text} from 'react-native';
 import {RoundedButton} from '../../atoms';
 import {Neomorph} from 'react-native-neomorph-shadows';
 import {podcastData} from '../../adapters';
+import {iconPlay, iconLike, iconLikeActive, iconPause} from '../../assets';
 const NowPlayingTabItem = () => {
+  const [isPlayed, setIsPlayed] = useState(false);
+  const [isLiked, setIsLiked] = useState(false);
   return (
     <View style={styles.nowPlayingContainer}>
       <View style={styles.songSection}>
         <Neomorph
-          inner={false}
-          swapShadows={false}
           darkShadowColor="#000000" // <- set this
           lightShadowColor="#353C45" // <- this
           style={styles.neuButton}>
@@ -21,11 +22,17 @@ const NowPlayingTabItem = () => {
         </View>
       </View>
       <View style={styles.buttonSection}>
-        <View style={styles.playButton}>
-          <RoundedButton />
+        <View
+          style={styles.likeButton}
+          onTouchEnd={() => (isLiked ? setIsLiked(false) : setIsLiked(true))}>
+          <RoundedButton icon={isLiked ? iconLikeActive : iconLike} />
         </View>
-        <View style={styles.likeButton}>
-          <RoundedButton />
+        <View
+          style={styles.playButton}
+          onTouchEnd={() =>
+            isPlayed ? setIsPlayed(false) : setIsPlayed(true)
+          }>
+          <RoundedButton icon={isPlayed ? iconPlay : iconPause} />
         </View>
       </View>
     </View>
@@ -69,7 +76,7 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     marginRight: 10,
   },
-  playButton: {
+  likeButton: {
     marginRight: 15,
   },
   titleSection: {

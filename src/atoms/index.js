@@ -1,2 +1,5 @@
 import RoundedButton from './roundedButton';
-export {RoundedButton};
+import DiscoverCard from './discoverCard';
+import DiscoverSearch from './discoverSearch';
+import Badges from './badge';
+export {RoundedButton, DiscoverCard, DiscoverSearch, Badges};

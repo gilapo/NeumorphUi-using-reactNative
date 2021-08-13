@@ -2,7 +2,6 @@ import React from 'react';
 import {StyleSheet, View, Pressable} from 'react-native';
 import NowPlayingTabItem from '../nowPlayingTabItem';
 import TabItem from '../TabItem';
-import {NowPlaying} from '../../pages';
 
 const BottomTabNavigator = ({state, descriptors, navigation}) => {
   const focusedOptions = descriptors[state.routes[state.index].key].options;
@@ -17,7 +16,7 @@ const BottomTabNavigator = ({state, descriptors, navigation}) => {
         <Pressable
           style={styles.nowPlayingButton}
           onPress={() => {
-            navigation.navigate(NowPlaying);
+            navigation.navigate('NowPlaying');
           }}>
           <NowPlayingTabItem />
         </Pressable>

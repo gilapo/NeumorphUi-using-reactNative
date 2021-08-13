@@ -70,7 +70,7 @@ const styles = StyleSheet.create({
   page: {
     flex: 1,
     backgroundColor: '#272a2e',
-    padding: 10,
+    //padding: 10,
   },
   heading: {
     marginTop: 10,
@@ -82,6 +82,7 @@ const styles = StyleSheet.create({
   },
   dividerText: {
     marginBottom: 10,
+    marginLeft: 10,
     color: 'white',
     fontSize: 25,
     fontWeight: 'bold',
@@ -95,5 +96,8 @@ const styles = StyleSheet.create({
   topPodcast: {
     flexDirection: 'row',
     borderColor: 'white',
+  },
+  artistSection: {
+    paddingLeft: 10,
   },
 });
