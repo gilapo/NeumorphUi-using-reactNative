@@ -8,6 +8,7 @@ import SearchBar from './SearchBar';
 import BrowseAll from './BrowseAll';
 import CollectionHeader from './CollectionHeader';
 import CollectionContent from './CollectionContent';
+import CollectionContentController from './CollectionContentController';
 export {
   BottomTabNavigator,
   TabItem,
@@ -19,4 +20,5 @@ export {
   BrowseAll,
   CollectionHeader,
   CollectionContent,
+  CollectionContentController,
 };

@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import {StyleSheet, Pressable, Image} from 'react-native';
 import {Neomorph} from 'react-native-neomorph-shadows';
-const RoundedButton = ({icon, onPress}) => {
+const RoundedButton = ({icon, onPress, width = 45}) => {
   const [inner, setInner] = useState(false);
   return (
     <Pressable
@@ -14,7 +14,7 @@ const RoundedButton = ({icon, onPress}) => {
         swapShadows={inner}
         darkShadowColor="#000000"
         lightShadowColor="#353C45"
-        style={styles.neuButton}>
+        style={styles.neuButton(width)}>
         <Image source={icon} style={styles.iconBtn} />
       </Neomorph>
     </Pressable>
@@ -28,16 +28,18 @@ const styles = StyleSheet.create({
     alignContent: 'center',
     alignItems: 'center',
   },
-  neuButton: {
-    borderColor: 'rgba(34, 37, 41, 0.7)',
-    borderWidth: 1,
-    shadowOpacity: 0.5, // <- and this or yours opacity
-    shadowRadius: 5,
-    borderRadius: 25,
-    backgroundColor: '#272a2e',
-    width: 45,
-    height: 45,
-    padding: 15,
+  neuButton: width => {
+    return {
+      borderColor: 'rgba(34, 37, 41, 0.7)',
+      borderWidth: 1,
+      shadowOpacity: 0.5, // <- and this or yours opacity
+      shadowRadius: 5,
+      borderRadius: width / 2,
+      backgroundColor: '#272a2e',
+      width: width,
+      height: width,
+      padding: '35%',
+    };
   },
   btntext: {
     color: '#919191',
@@ -52,5 +54,8 @@ const styles = StyleSheet.create({
   iconBtn: {
     width: '100%',
     height: '100%',
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
   },
 });

@@ -4,7 +4,7 @@ import {CollectionHeader} from '../../components';
 import {Badges} from '../../atoms';
 import {colors} from '../../utils/constants';
 import {badgesData, collections} from '../../adapters';
-import {CollectionContent} from '../../components';
+import {CollectionContent, CollectionContentController} from '../../components';
 
 const BadgesButton = () => {
   return badgesData.map(data => (
@@ -36,6 +36,9 @@ const Collection = () => {
       <ScrollView
         style={styles.contentSection}
         showsVerticalScrollIndicator={false}>
+        <View>
+          <CollectionContentController />
+        </View>
         <CollectionContentButton />
       </ScrollView>
     </View>
@@ -62,14 +65,13 @@ const styles = StyleSheet.create({
     justifyContent: 'space-between',
   },
   badges: {
-    marginVertical: 5,
+    marginTop: 5,
     flexDirection: 'row',
     justifyContent: 'space-around',
     width: '100%',
     height: '40%',
   },
   contentSection: {
-    marginTop: 10,
     flex: 1,
   },
 });

@@ -28,7 +28,11 @@ const Router = () => {
         component={MainApp}
         options={{headerShown: false}}
       />
-      <Stack.Screen name="NowPlaying" component={NowPlaying} />
+      <Stack.Screen
+        name="NowPlaying"
+        component={NowPlaying}
+        options={{headerShown: false}}
+      />
       <Stack.Screen
         name="Search"
         component={Search}

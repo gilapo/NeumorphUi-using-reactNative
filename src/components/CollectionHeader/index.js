@@ -6,7 +6,7 @@ import {iconSearch, defaultImage, iconAdd} from '../../assets';
 const CollectionHeader = () => {
   const [inner, setInner] = useState(false);
   return (
-    <View style={styles.nowPlayingContainer}>
+    <View style={styles.collectionHeaderContainer}>
       <View style={styles.profilePhotoSection}>
         <Pressable
           onPressIn={() => setInner(true)}
@@ -27,10 +27,10 @@ const CollectionHeader = () => {
         </View>
       </View>
       <View style={styles.buttonSection}>
-        <View style={styles.likeButton}>
+        <View style={styles.searchButton}>
           <RoundedButton icon={iconSearch} />
         </View>
-        <View style={styles.playButton}>
+        <View>
           <RoundedButton icon={iconAdd} />
         </View>
       </View>
@@ -41,7 +41,7 @@ const CollectionHeader = () => {
 export default CollectionHeader;
 
 const styles = StyleSheet.create({
-  nowPlayingContainer: {
+  collectionHeaderContainer: {
     flex: 1,
     display: 'flex',
     flexDirection: 'row',
@@ -74,7 +74,7 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     marginRight: 10,
   },
-  likeButton: {
+  searchButton: {
     marginRight: 15,
   },
   titleSection: {

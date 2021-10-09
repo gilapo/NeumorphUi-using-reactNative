@@ -36,6 +36,7 @@ const styles = StyleSheet.create({
     borderRadius: 10,
   },
   neuCard: {
+    padding: 1,
     shadowOpacity: 0.5, // <- and this or yours opacity
     shadowRadius: 5,
     borderWidth: 2,
@@ -45,7 +46,7 @@ const styles = StyleSheet.create({
     backgroundColor: '#272a2e',
     justifyContent: 'center',
     alignItems: 'center',
-    width: 190,
+    width: 180,
     height: 100,
   },
   neuButtonColor: color => {

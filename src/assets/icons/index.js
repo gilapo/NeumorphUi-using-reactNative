@@ -14,6 +14,9 @@ import iconLikeActive from './likeActive.png';
 import iconSearchBlack from './searchBlack.png';
 import iconBack from './back.png';
 import iconAdd from './add.png';
+import iconSort from './sort.png';
+import iconList from './list.png';
+import iconTilled from './tilled.png';
 export {
   IconHome,
   iconHomeActive,
@@ -31,4 +34,7 @@ export {
   iconSearchBlack,
   iconBack,
   iconAdd,
+  iconList,
+  iconSort,
+  iconTilled,
 };

@@ -2,12 +2,12 @@ import React, {useState} from 'react';
 import {StyleSheet, View, Image, Text, Pressable} from 'react-native';
 import {Neomorph} from 'react-native-neomorph-shadows';
 import {defaultImage} from '../../assets';
-const CollectionContent = ({title, image, category, updateTime}) => {
-  const [isPlayed, setIsPlayed] = useState(false);
+import {colors} from '../../utils/constants';
+const CollectionContent = ({title, image, category, updateTime, isPlayed}) => {
   const [inner, setInner] = useState(false);
   return (
-    <View style={styles.nowPlayingContainer}>
-      <View style={styles.songSection}>
+    <View style={styles.Content}>
+      <View style={styles.categoriesCover}>
         <Pressable
           onPressIn={() => setInner(true)}
           onPressOut={() => setInner(false)}
@@ -31,12 +31,17 @@ const CollectionContent = ({title, image, category, updateTime}) => {
           </Neomorph>
         </Pressable>
         <View style={styles.titleSection}>
-          <Text style={styles.title}>{title}</Text>
+          <Text
+            style={styles.title(
+              isPlayed ? colors.secondaryColor : colors.textColorWhite,
+            )}>
+            {title}
+          </Text>
           {category === 'Artist' ? null : (
             <Text style={styles.categories}>{category}</Text>
           )}
           {updateTime !== undefined ? (
-            <Text style={styles.updateTime}>14 jam yang lalu</Text>
+            <Text style={styles.updateTime}>{updateTime}</Text>
           ) : null}
         </View>
       </View>
@@ -47,7 +52,7 @@ const CollectionContent = ({title, image, category, updateTime}) => {
 export default CollectionContent;
 
 const styles = StyleSheet.create({
-  nowPlayingContainer: {
+  Content: {
     flex: 1,
     display: 'flex',
     flexDirection: 'row',
@@ -55,7 +60,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     padding: 5,
   },
-  songSection: {
+  categoriesCover: {
     display: 'flex',
     flexDirection: 'row',
   },
@@ -93,10 +98,8 @@ const styles = StyleSheet.create({
     marginLeft: 10,
     justifyContent: 'center',
   },
-  title: {
-    color: '#ffffff',
-    fontSize: 14,
-    fontWeight: '100',
+  title: color => {
+    return {color: color, fontSize: 14, fontWeight: '100'};
   },
   categories: {
     color: '#ffffff',
